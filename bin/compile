@@ -50,7 +50,7 @@ if [ -f $BUILD_DIR/Procfile ]; then
 fi
 
 cat << EOF > $BUILD_DIR/Procfile
-web: \$JBOSS_HOME/bin/standalone.sh -b=0.0.0.0 -Djboss.http.port=\$PORT
+web: \$JBOSS_HOME/bin/standalone.sh -b=0.0.0.0 -bjboss.bind.address.management:127.0.0.1 -Djboss.http.port=\$PORT
 EOF
 
 cat << EOF > $BUILD_DIR/.profile.d/jboss.sh
