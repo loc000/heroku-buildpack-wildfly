@@ -50,7 +50,7 @@ if [ -f $BUILD_DIR/Procfile ]; then
 fi
 
 cat << EOF > $BUILD_DIR/Procfile
-web: \$JBOSS_HOME/bin/standalone.sh -b=0.0.0.0 -Djboss.http.port=\$PORT  "/core-service=management/management-interface=http-interface:write-attribute(name=console-enabled,value=false)"
+web: \$JBOSS_HOME/bin/standalone.sh  -Djboss.http.port=\$PORT 
 EOF
 
 cat << EOF > $BUILD_DIR/.profile.d/jboss.sh
